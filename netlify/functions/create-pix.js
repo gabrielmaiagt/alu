@@ -18,6 +18,11 @@ exports.handler = async (event) => {
 
   const { amount, description, reference, customer, tracking } = body;
 
+  const headers = event.headers || {};
+  const host = headers['x-forwarded-host'] || headers.host || '';
+  const proto = headers['x-forwarded-proto'] || (host.startsWith('localhost') || host.startsWith('127.0.0.1') ? 'http' : 'https');
+  const postbackUrl = host ? `${proto}://${host}/api/flevopay-webhook` : undefined;
+
   const document = onlyDigits(customer && customer.document);
   const phone = onlyDigits(customer && customer.phone);
 
@@ -48,6 +53,7 @@ exports.handler = async (event) => {
           document,
         },
         ...(tracking && Object.keys(tracking).length ? { tracking } : {}),
+        ...(postbackUrl ? { postback_url: postbackUrl } : {}),
       }),
     });
 
