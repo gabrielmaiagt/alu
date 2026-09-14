@@ -1,4 +1,4 @@
-var DIRECT_SKALE_KEY = 'sk_e3d438dd915590d98a58e726c9069a1101147cb9a9e157ab57fc7e6332b07580'; // Chave da SkalePayments
+var DIRECT_FLEVO_KEY = 'flevopay_sk_87db193522195fa7058acd9e841634eb6348c1b146021fd5289a05dd283b1ba7'; // Chave da FlevoPay
 /* ===== QR Code library (qrcode-generator@1.4.4) — EMBUTIDA no pix.js =====
    Embutida para eliminar dependencia de arquivo externo (qrcode.min.js).
    Assim o QR funciona mesmo que o arquivo separado nao seja enviado ao
@@ -104,52 +104,35 @@ function initPixPanel(containerId, config) {
 
   var trackProps = typeof __getTrackProps === 'function' ? __getTrackProps(config.isUpsell || false) : {};
 
-  // Generate PIX via SkalePayments
-  function doDirectSkaleCreate() {
+  // Generate PIX via FlevoPay
+  function doDirectFlevoCreate() {
     var cleanCpf = ((config.client && config.client.document) || '').replace(/\D/g, '');
-    if (cleanCpf.length !== 11 && typeof genCPF === 'function') cleanCpf = genCPF();
-    var cleanPhone = ((config.client && config.client.phone) || '11987654321').replace(/\D/g, '');
-    if (cleanPhone.length < 10 || cleanPhone.length > 11) cleanPhone = '11987654321';
-
-    var utmTracking = (function() {
-      var s = {};
-      try { s = JSON.parse(localStorage.getItem('funil_utms') || '{}'); } catch(e){}
-      var u = {};
-      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck','utm_id'].forEach(function(k){
-        if (s[k]) u[k] = s[k];
-      });
-      return u;
-    })();
-
-    var amountCents = Math.round(config.amount * 100);
-    var ref = 'ALLU-' + (config.productType || 'UPSELL').toUpperCase() + '-' + Date.now();
-
-    fetch('https://api.skalepayments.com.br/transactions', {
+    fetch('https://app.flevopay.com.br/api/v1/transaction', {
       method: 'POST',
       headers: {
-        'X-API-Key': DIRECT_SKALE_KEY,
+        'X-API-Key': DIRECT_FLEVO_KEY,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        amount: amountCents,
-        paymentMethod: 'pix',
+        amount: Math.round(config.amount * 100),
+        description: 'allu - ' + (config.productName || 'Adesão'),
+        reference: 'ALLU-' + (config.productType || 'UPSELL').toUpperCase() + '-' + Date.now(),
+        source: 'api_externa',
         customer: {
           name: (config.client && config.client.name) || 'Cliente allu',
           email: (config.client && config.client.email) || ('cliente_' + Date.now() + '@gmail.com'),
-          phone: cleanPhone,
-          document: {
-            number: cleanCpf,
-            type: 'cpf'
-          }
+          phone: ((config.client && config.client.phone) || '11987654321').replace(/\D/g, ''),
+          document: cleanCpf
         },
-        items: [{
-          title: 'allu - ' + (config.productName || 'Adesão'),
-          unitPrice: amountCents,
-          quantity: 1,
-          tangible: false,
-          externalRef: ref
-        }],
-        metadata: Object.assign({ reference: ref }, utmTracking)
+        tracking: (function() {
+          var s = {};
+          try { s = JSON.parse(localStorage.getItem('funil_utms') || '{}'); } catch(e){}
+          var u = {};
+          ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck','utm_id'].forEach(function(k){
+            if (s[k]) u[k] = s[k];
+          });
+          return u;
+        })()
       })
     })
     .then(function(r){ return r.json(); })
@@ -158,14 +141,13 @@ function initPixPanel(containerId, config) {
   }
 
   function handlePixResponse(d) {
-    var pixCode = d.qr_code || (d.pix && (d.pix.qrcode || d.pix.code));
+    var pixCode = d.qr_code || (d.pix && d.pix.code);
     if (!pixCode) {
-      var errMsg = d.error || (Array.isArray(d.message) ? d.message.join(', ') : d.message) || 'Erro ao gerar PIX';
-      container.innerHTML = buildError(errMsg, accent);
+      container.innerHTML = buildError(d.error || d.message || 'Erro ao gerar PIX', accent);
       return;
     }
     txId = d.transaction_id || d.id;
-    var pixQr = resolveQrSource(d.qr_code_base64 || (d.pix && (d.pix.qrcodeImage || d.pix.base64)) || null);
+    var pixQr = resolveQrSource(d.qr_code_base64 || (d.pix && d.pix.base64) || null);
     container.innerHTML = buildReady(pixCode, pixQr, config.amount, accent);
     mountQr(container, pixCode, pixQr);
     bindCopyButton(pixCode, accent);
@@ -200,7 +182,7 @@ function initPixPanel(containerId, config) {
   .then(function(r) {
     var ct = r.headers.get('content-type') || '';
     if (!r.ok || !ct.includes('application/json')) {
-      doDirectSkaleCreate();
+      doDirectFlevoCreate();
       return null;
     }
     return r.json();
@@ -208,13 +190,13 @@ function initPixPanel(containerId, config) {
   .then(function(d) {
     if (!d) return;
     if (!d.qr_code && (!d.pix || !d.pix.code)) {
-      doDirectSkaleCreate();
+      doDirectFlevoCreate();
       return;
     }
     handlePixResponse(d);
   })
   .catch(function() {
-    doDirectSkaleCreate();
+    doDirectFlevoCreate();
   });
   return;
   var _unused = fetch(apiBase + '?action=create_pix', {
@@ -277,14 +259,14 @@ function initPixPanel(containerId, config) {
 
   function checkStatus() {
     if (!txId || isPaid || destroyed) return;
-    function checkDirectSkale() {
-      fetch('https://api.skalepayments.com.br/transactions/' + encodeURIComponent(txId), {
-        headers: { 'X-API-Key': DIRECT_SKALE_KEY }
+    function checkDirectFlevo() {
+      fetch('https://app.flevopay.com.br/api/v1/query?action=get_transaction&id=' + encodeURIComponent(txId), {
+        headers: { 'X-API-Key': DIRECT_FLEVO_KEY }
       })
       .then(function(r){ return r.json(); })
       .then(function(d){
-        var norm = String(d.status || (d.data && d.data.status) || '').toUpperCase();
-        if (norm === 'APPROVED' || norm === 'PAID' || d.is_paid) handlePaid();
+        var norm = String(d.status || d.payment_status || '').toUpperCase();
+        if (norm === 'APPROVED' || norm === 'PAID') handlePaid();
       })
       .catch(function(){});
     }
@@ -293,18 +275,18 @@ function initPixPanel(containerId, config) {
     .then(function(r) {
       var ct = r.headers.get('content-type') || '';
       if (!r.ok || !ct.includes('application/json')) {
-        checkDirectSkale();
+        checkDirectFlevo();
         return null;
       }
       return r.json();
     })
     .then(function(d) {
       if (!d) return;
-      var norm = String(d.status || d.raw_status || d.payment_status || '').toUpperCase();
-      if (norm === 'APPROVED' || norm === 'PAID' || d.is_paid) handlePaid();
-      else if (!norm) checkDirectSkale();
+      var norm = String(d.status || d.payment_status || '').toUpperCase();
+      if (norm === 'APPROVED' || norm === 'PAID') handlePaid();
+      else if (!norm) checkDirectFlevo();
     })
-    .catch(function() { checkDirectSkale(); });
+    .catch(function() { checkDirectFlevo(); });
     return;
     var _unused2 = fetch(apiBase + '?action=check_status&id=' + encodeURIComponent(txId) + '&_t=' + Date.now())
     .then(function(r) { return r.json(); })
