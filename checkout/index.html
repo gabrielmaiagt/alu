@@ -632,7 +632,7 @@ input{font-family:'Inter',sans-serif}
       try{
         const res = await fetch(`/api/check-payment?id=${encodeURIComponent(id)}`);
         const data = await res.json();
-        if (data.status === 'approved'){
+        if (data.status === 'approved' || data.status === 'paid' || data.is_paid){
           clearInterval(pollTimer);
           sessionStorage.setItem('allu_order', JSON.stringify(currentOrder));
           try {
@@ -647,7 +647,7 @@ input{font-family:'Inter',sans-serif}
           window.location.href = targetUp1 + search;
           return;
         }
-        if (['failed','refunded','chargeback'].includes(data.status)){
+        if (['failed','refunded','chargeback','refused','cancelled'].includes(data.status)){
           clearInterval(pollTimer);
           document.getElementById('pixStatus').textContent = 'Pagamento não foi confirmado.';
           document.getElementById('btnRetryPix').hidden = false;
