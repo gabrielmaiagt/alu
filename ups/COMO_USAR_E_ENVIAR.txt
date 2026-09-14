@@ -1,0 +1,31 @@
+﻿======================================================================
+ESTEIRA COMPLETA DE UPSELLS — SEPARADA INDIVIDUALMENTE
+======================================================================
+
+Cada pasta aqui dentro é 100% INDEPENDENTE.
+Basta dar dois cliques no arquivo "index.html" de qualquer pasta para abrir e testar no navegador!
+
+- PASTA 1: 1 - UPSELL IOF (Imposto Banco Central)
+  * Preço Normal: R$ 16,90 | Downsell: R$ 8,90
+  * Gatilho: Liberação do pacote travada no Banco Central por IOF cambial.
+
+- PASTA 2: 2 - UPSELL ALFANDEGA (Desembaraco Aduaneiro)
+  * Preço Normal: R$ 29,90 | Downsell: R$ 14,90
+  * Gatilho: Carga retida no ponto alfandegário aguardando taxa.
+
+- PASTA 3: 3 - UPSELL FRETE (Seguro e Prioridade)
+  * Preço Normal: R$ 24,90 | Downsell: R$ 12,90
+  * Gatilho: Pacote na transportadora sem seguro contra roubo/extravio.
+
+----------------------------------------------------------------------
+COMO ENVIAR PELO WHATSAPP (IMPORTANTE!):
+----------------------------------------------------------------------
+O WhatsApp NÃO aceita arrastar pastas amarelas diretamente!
+Por isso, foram criados arquivos .ZIP prontos na sua Área de Trabalho:
+
+1. Abra a conversa do seu amigo no WhatsApp Web ou Desktop.
+2. Clique no ícone de CLIPE DE PAPEL (📎) ao lado de onde você digita a mensagem.
+3. Escolha a opção "DOCUMENTO" (📄).
+4. Selecione o arquivo "TODOS_OS_UPSELLS.zip" (ou envie os zips separados de cada um).
+5. Clique em ENVIAR!
+======================================================================

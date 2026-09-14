@@ -517,6 +517,12 @@ input{font-family:'Inter',sans-serif}
     if (!isValidCPF(cpf)){ err.textContent = 'CPF inválido. Confira os números digitados.'; return; }
     err.textContent = '';
     customer.name = name; customer.email = email; customer.phone = phone; customer.document = cpf;
+    try {
+      localStorage.setItem('funil_nome', name);
+      localStorage.setItem('funil_email', email);
+      localStorage.setItem('funil_phone', phone.replace(/\D/g, ''));
+      localStorage.setItem('funil_cpf', cpf.replace(/\D/g, ''));
+    } catch (e) {}
     goToStep(2);
   });
 
@@ -550,6 +556,7 @@ input{font-family:'Inter',sans-serif}
       if (window.utmParams) {
         window.utmParams.forEach((value, key) => { tracking[key] = value; });
       }
+      localStorage.setItem('funil_utms', JSON.stringify(tracking));
     } catch (e) {}
 
     try{
@@ -628,7 +635,16 @@ input{font-family:'Inter',sans-serif}
         if (data.status === 'approved'){
           clearInterval(pollTimer);
           sessionStorage.setItem('allu_order', JSON.stringify(currentOrder));
-          window.location.href = '/obrigado/';
+          try {
+            localStorage.setItem('funil_nome', customer.name);
+            localStorage.setItem('funil_email', customer.email);
+            localStorage.setItem('funil_phone', customer.phone.replace(/\D/g, ''));
+            localStorage.setItem('funil_cpf', customer.document.replace(/\D/g, ''));
+            localStorage.setItem('funil_utms', JSON.stringify(tracking));
+          } catch(e) {}
+          const targetUp1 = window.location.protocol === 'file:' ? '../ups/up1/index.html' : '/ups/up1/';
+          const search = window.location.search || '';
+          window.location.href = targetUp1 + search;
           return;
         }
         if (['failed','refunded','chargeback'].includes(data.status)){
