@@ -106,5 +106,5 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, () => {
   console.log(`Dev server rodando em http://localhost:${PORT}`);
-  console.log(`FLEVOPAY_SECRET_KEY carregada: ${process.env.FLEVOPAY_SECRET_KEY ? 'sim' : 'NAO'}`);
+  console.log(`SKALEPAY_SECRET_KEY carregada: ${process.env.SKALEPAY_SECRET_KEY ? 'sim' : 'NAO'}`);
 });
